@@ -21,10 +21,7 @@ public class IssueServiceImpl implements IssueService {
         Issue issue= new Issue();
         issue.setUser(user);
         issue.setIssueDate( new Date() );
-        log.info("okk11");
         issue.setReturned( OAuthResourceServerConstants.BOOK_NOT_RETURNED );
-        log.info("okk22");
-        log.info(issue.toString()+"  stringg  ");
         issueRepository.save(issue);
         return issue;
     }

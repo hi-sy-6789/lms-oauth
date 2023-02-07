@@ -32,7 +32,6 @@ public class BookServiceImpl implements  BookService{
     @Override
     public List<Book> getAll() {
         List<Book> list =  bookRepository.findAll();
-        System.out.println(list+" listt  ");
         return list;
     }
 

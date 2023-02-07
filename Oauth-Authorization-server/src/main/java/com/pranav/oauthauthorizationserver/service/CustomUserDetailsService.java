@@ -2,6 +2,7 @@ package com.pranav.oauthauthorizationserver.service;
 
 import com.pranav.oauthauthorizationserver.entity.User;
 import com.pranav.oauthauthorizationserver.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Slf4j
 @Service
 @Transactional
 public class CustomUserDetailsService implements UserDetailsService {

@@ -1,5 +1,6 @@
 package com.pranav.oauthresourceserver.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,7 +38,8 @@ public class Book implements Serializable {
 
     private Date createDate;
 
-    @ManyToOne()
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "category_id",
             referencedColumnName = "id",

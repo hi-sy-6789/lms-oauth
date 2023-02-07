@@ -54,25 +54,18 @@ public class IssueController {
         for(Long itr:bookIdsArray){
             bookIds.add(itr);
         }
-log.info(userId+ " userId");
         User user = userService.get( userId );
-        log.info("22");
         List<Book> books = bookService.get(bookIds);
-        log.info(user.toString()+" user");
+        log.info(books+"    :::--->>>>> books");
         Issue issue = issueService.addNew(user);
-        log.info("44");
-        for( int k=0 ; k<books.size() ; k++ ) {
-            Book book = books.get(k);
+        for( int itr=0 ; itr<books.size() ; itr++ ) {
+            Book book = books.get(itr);
             book.setStatus( OAuthResourceServerConstants.BOOK_STATUS_ISSUED );
-            log.info("55");
             book = bookService.save(book);
-            log.info("66");
             IssuedBook issuedBook = new IssuedBook();
             issuedBook.setBook( book );
             issuedBook.setIssue( issue );
-            log.info("77");
             issuedBookService.addNew( issuedBook );
-            log.info("88");
         }
 
         return successMessage;
@@ -84,8 +77,8 @@ log.info(userId+ " userId");
         Issue issue = issueService.get(id);
         if( issue != null ) {
             List<IssuedBook> issuedBooks = issue.getIssuedBooks();
-            for( int k=0 ; k<issuedBooks.size() ; k++ ) {
-                IssuedBook issuedBook = issuedBooks.get(k);
+            for( int itr=0 ; itr<issuedBooks.size() ; itr++ ) {
+                IssuedBook issuedBook = issuedBooks.get(itr);
                 issuedBook.setReturned( OAuthResourceServerConstants.BOOK_RETURNED );
                 issuedBookService.save( issuedBook );
 

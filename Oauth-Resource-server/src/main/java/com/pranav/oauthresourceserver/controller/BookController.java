@@ -31,7 +31,7 @@ public class BookController {
 
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     @GetMapping(value = "/{id}/list")
-    public List<Book> get(@PathVariable(name = "id") Long id) {
+    public List<Book> getBooksFromCategoryId(@PathVariable(name = "id") Long id) {
         Category category = categoryService.get(id);
         return bookService.getByCategory( category );
     }

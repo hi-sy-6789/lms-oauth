@@ -1,7 +1,6 @@
 package com.pranav.oauthresourceserver.error;
 
 import com.pranav.oauthresourceserver.entity.Message;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
-import javax.validation.ConstraintViolationException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashMap;
 import java.util.List;

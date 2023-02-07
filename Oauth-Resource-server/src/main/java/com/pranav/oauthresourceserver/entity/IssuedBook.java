@@ -21,7 +21,7 @@ public class IssuedBook implements Serializable {
 
     @JsonIgnore
     @OneToOne(
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     @JoinColumn(
             name = "book_id",

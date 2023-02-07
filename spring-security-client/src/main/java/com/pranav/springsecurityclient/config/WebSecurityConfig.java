@@ -17,7 +17,7 @@ public class WebSecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .antMatchers("/api/**").authenticated()
+                .mvcMatchers("/api/**").authenticated()
                 .and()
                 .oauth2Login(oauth2login ->
                         oauth2login.loginPage("/oauth2/authorization/api-client-oidc").defaultSuccessUrl("/api/home/", true))

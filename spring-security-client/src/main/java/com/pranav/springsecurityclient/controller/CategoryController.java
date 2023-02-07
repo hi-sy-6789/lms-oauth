@@ -20,7 +20,7 @@ public class CategoryController {
     private WebClient webClient;
 
     @GetMapping(value = {"/", "/list"})
-    public String allCategory(
+    public String getAllCategory(
             @RegisteredOAuth2AuthorizedClient("api-client-authorization-code")
             OAuth2AuthorizedClient client){
         return this.webClient

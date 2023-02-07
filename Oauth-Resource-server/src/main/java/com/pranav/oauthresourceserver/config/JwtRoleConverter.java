@@ -22,9 +22,7 @@ public class JwtRoleConverter implements Converter<Jwt, Collection<GrantedAuthor
         if (roles == null || roles.isEmpty()) {
             return new ArrayList();
         }
-        Collection cc=roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-        //log.info(cc.toString());
-        return cc;
+        return roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
     }
 
 }
