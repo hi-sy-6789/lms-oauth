@@ -28,6 +28,6 @@ spring:
                         enable: true
                     auth: true
         host: smtp.gmail.com
-        username: springbootemailclient@gmail.com
-        password: iofaywkgzdizxkms
+        username: **
+        password: ***
         port: 587
